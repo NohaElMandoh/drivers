@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-Route::get('get_drivers', [App\Http\Controllers\Api\HomeController::class, 'index']);
 
-// Route::get('get_drivers', 'Api\HomeController@index');
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('get_drivers', [App\Http\Controllers\Api\ApiController::class, 'get_driver']);
 

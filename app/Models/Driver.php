@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Driver extends Model
 {
     use HasFactory;
+
+    protected $appends = ['image'];
+
+    public function getImageAttribute()
+    {
+       
+        return url($this->picture);
+    }
 }
